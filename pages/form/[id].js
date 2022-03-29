@@ -13,7 +13,7 @@ import {
 } from "carbon-components-react";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
-export default function Home({ data, tokenJson }) {
+export default function Home({ data, token }) {
   if (!data) {
     return (
       <Tile>
@@ -28,7 +28,7 @@ export default function Home({ data, tokenJson }) {
     uri: "https://hrbt-portal.hasura.app/v1/graphql/",
     cache: new InMemoryCache(),
     headers: {
-      Authorization: `Bearer ${tokenJson.token}`,
+      Authorization: `Bearer ${token}`,
     },
   });
   const answer_mutation = gql`
@@ -171,21 +171,12 @@ export default function Home({ data, tokenJson }) {
 
 export async function getServerSideProps(context) {
   const { id } = context.query;
-  const token = await fetch("https://formee-auth.hackersreboot.tech/visitor", {
-        method: "GET",
-        headers: {
-          // update with your user-agent
-          "User-Agent":
-            "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36", 
-          Accept: "application/json; charset=UTF-8",
-        },
-      });
-  const tokenJson = await token.json();
+  const token = process.env.VISITOR_JWT
   const client = new ApolloClient({
     uri: "https://hrbt-portal.hasura.app/v1/graphql/",
     cache: new InMemoryCache(),
     headers: {
-      Authorization: `Bearer ${tokenJson.token}`,
+      Authorization: `Bearer ${token}`,
     },
   });
   const { data } = await client.query({
@@ -223,7 +214,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data: data.Form_by_pk,
-      tokenJson: tokenJson,
+      token: token,
     },
   };
 }
