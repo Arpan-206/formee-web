@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.5.10",
+    "@apollo/client": "^3.6.0",
     "carbon-components": "^10.56.0",
     "carbon-components-react": "^7.56.0",
     "carbon-icons": "^7.0.7",
