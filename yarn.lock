@@ -411,10 +411,10 @@ caniuse-lite@^1.0.30001332:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001342.tgz#87152b1e3b950d1fbf0093e23f00b6c8e8f1da96"
   integrity sha512-bn6sOCu7L7jcbBbyNhLg0qzXdJ/PMbybZTH/BA6Roet9wxYRm6Tr9D0s0uhLkOZ6MSG+QU6txUgdpr3MXIVqjA==
 
-carbon-components-react@^7.57.0:
-  version "7.57.1"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.57.1.tgz#d59b079300ded3f721f0a42beed6721afccaa3d6"
-  integrity sha512-7B1MQWfiN7oNONvdCX3ROFDu1Smu2DvILyH3JQupPF7rmqtPEvJH/zH33xNU8t4oSwT4tkigDM42/War7Ewyxw==
+carbon-components-react@^7.57.2:
+  version "7.57.2"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.57.2.tgz#37266b9577b4d8ded6b2c9677fd8b866a1e231e3"
+  integrity sha512-qkdJLYjfBfDvSl43+LSU0/3MB9FYTMQvuiy/DSsD0//RtUndj3bn6DJyS3E0OLFssICoQyYMAnjTTjFtRfhK9A==
   dependencies:
     "@babel/runtime" "^7.16.7"
     "@carbon/feature-flags" "^0.7.0"
